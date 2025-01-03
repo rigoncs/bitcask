@@ -2,6 +2,8 @@ package data
 
 import "bitcask/fio"
 
+const DataFileNameSuffix = ".data"
+
 // DataFile 数据文件
 type DataFile struct {
 	FileId    uint32        // 文件id
@@ -23,6 +25,6 @@ func (df *DataFile) Sync() error {
 }
 
 // ReadLogRecord 根据 offset 从数据文件中读取 LogRecord
-func (df *DataFile) ReadLogRecord(offset int64) (*LogRecord, error) {
-	return nil, nil
+func (df *DataFile) ReadLogRecord(offset int64) (*LogRecord, int64, error) {
+	return nil, 0, nil
 }
