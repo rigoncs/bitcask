@@ -17,9 +17,6 @@ type Indexer interface {
 
 	// Delete 根据 key 删除对应的索引位置信息
 	Delete(key []byte) (*data.LogRecordPos, bool)
-
-	// Size 索引中的数据量
-	Size() int
 }
 
 type Item struct {

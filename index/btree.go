@@ -52,7 +52,3 @@ func (bt *BTree) Delete(key []byte) (*data.LogRecordPos, bool) {
 	}
 	return oldItem.(*Item).pos, true
 }
-
-func (bt *BTree) Size() int {
-	return bt.tree.Len()
-}
