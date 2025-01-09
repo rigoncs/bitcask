@@ -18,8 +18,8 @@ func TestMMap_Read(t *testing.T) {
 	// 文件为空
 	b1 := make([]byte, 10)
 	n1, err := mmapIO.Read(b1, 0)
-	assert.Nil(t, err)
-	assert.Equal(t, io.EOF, n1)
+	assert.Equal(t, 0, n1)
+	assert.Equal(t, io.EOF, err)
 
 	// 有文件的情况
 	fio, err := NewFileIOManager(path)

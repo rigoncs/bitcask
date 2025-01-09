@@ -15,7 +15,7 @@ func destroyFile(name string) {
 }
 
 func TestNewFileIOManager(t *testing.T) {
-	path := filepath.Join("D:\\tmp", "a.data")
+	path := filepath.Join("/tmp", "a.data")
 	fio, err := NewFileIOManager(path)
 	defer destroyFile(path)
 
@@ -24,7 +24,7 @@ func TestNewFileIOManager(t *testing.T) {
 }
 
 func TestFileIO_Write(t *testing.T) {
-	path := filepath.Join("D:\\tmp", "b.data")
+	path := filepath.Join("/tmp", "b.data")
 	fio, err := NewFileIOManager(path)
 	defer destroyFile(path)
 
@@ -70,7 +70,7 @@ func TestFileIO_Read(t *testing.T) {
 }
 
 func TestFileIO_Sync(t *testing.T) {
-	path := filepath.Join("D:\\tmp", "a.data")
+	path := filepath.Join("/tmp", "a.data")
 	fio, err := NewFileIOManager(path)
 	defer destroyFile(path)
 
@@ -82,7 +82,7 @@ func TestFileIO_Sync(t *testing.T) {
 }
 
 func TestFileIO_Close(t *testing.T) {
-	path := filepath.Join("D:\\tmp", "a.data")
+	path := filepath.Join("/tmp", "a.data")
 	fio, err := NewFileIOManager(path)
 	defer destroyFile(path)
 
