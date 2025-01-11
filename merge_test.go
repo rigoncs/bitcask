@@ -104,7 +104,6 @@ func TestDB_Merge3(t *testing.T) {
 
 	for i := 0; i < 10000; i++ {
 		_, err := db2.Get(utils.GetTestKey(i))
-		assert.Nil(t, err)
 		assert.Equal(t, ErrKeyNotFound, err)
 	}
 	for i := 40000; i < 50000; i++ {

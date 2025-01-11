@@ -31,7 +31,7 @@ func TestDB_Iterator_One_Value(t *testing.T) {
 	assert.Nil(t, err)
 	assert.NotNil(t, db)
 
-	err = db.Put(utils.GetTestKey(10), utils.RandomValue(10))
+	err = db.Put(utils.GetTestKey(10), utils.GetTestKey(10))
 	assert.Nil(t, err)
 
 	iterator := db.NewIterator(DefaultIteratorOptions)
