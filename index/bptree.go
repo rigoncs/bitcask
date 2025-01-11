@@ -71,7 +71,7 @@ func (bpt *BPlusTree) Delete(key []byte) (*data.LogRecordPos, bool) {
 	var oldVal []byte
 	if err := bpt.tree.Update(func(tx *bbolt.Tx) error {
 		bucket := tx.Bucket(indexBucketName)
-		if oldVal := bucket.Get(key); len(oldVal) != 0 {
+		if oldVal = bucket.Get(key); len(oldVal) != 0 {
 			return bucket.Delete(key)
 		}
 		return nil
