@@ -32,6 +32,7 @@ func main() {
 
 	// 初始化一个 Redis 服务器
 	bitcaskServer.server = redcon.NewServer(addr, execClientCommand, bitcaskServer.accept, bitcaskServer.close)
+	bitcaskServer.listen()
 }
 
 func (svr *BitcaskServer) listen() {
